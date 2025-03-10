@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://e-commerce-app-nu-sage.vercel.app/",
     credentials: true
   }))
 
