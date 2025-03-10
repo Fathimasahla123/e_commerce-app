@@ -14,15 +14,10 @@ app.use(cors({
     credentials: true
   }))
 
-// // MongoDB connection
-// mongoose.connect(process.env.MONGO_URI)
-//   .then(() => console.log('MongoDB connected'))
-//   .catch(err => console.log(err));
 
 // Routes
 app.use('/api/products', require('./src/routes/productRoutes'));
-// app.use('/api/users', require('./src/routes/userRoutes'));
-// app.use('/api/orders', require('./src/routes/orderRoutes'));
+
 connectDB();
 
 const PORT = process.env.PORT || 5000;
