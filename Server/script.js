@@ -1,22 +1,25 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const connectDB = require('./config/db');
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const connectDB = require("./config/db");
 
 dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(cors({
+app.use(
+  cors({
     origin: "https://e-commerce-app-nu-sage.vercel.app/",
-    credentials: true
-  }))
+    credentials: true,
 
+    allowedHeaders: ["Content-Type", "Authorization", "x-access-token"],
+  })
+);
 
 // Routes
-app.use('/api/products', require('./src/routes/productRoutes'));
+app.use("/api/products", require("./src/routes/productRoutes"));
 
 connectDB();
 
