@@ -1,0 +1,235 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  button {
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Container Styles */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  /* Navigation Styles */
+  .nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .nav a {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav a:hover {
+    color: #007bff;
+  }
+  
+  /* Home Page Styles */
+  .home-container {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .home-heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .home-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .home-button {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .home-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Products Page Styles */
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .product-card p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  .product-card button {
+    background-color: #28a745;
+    color: #fff;
+    margin-top: 10px;
+  }
+  
+  .product-card button:hover {
+    background-color: #218838;
+  }
+  
+  /* Product Details Page Styles */
+  .product-details {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .product-details h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .product-details p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .product-details button {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .product-details button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Cart Page Styles */
+  .cart-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .cart-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .cart-empty-text {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #666;
+  }
+  
+  .cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cart-item:last-child {
+    border-bottom: none;
+  }
+  
+  .cart-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  .cart-item button {
+    background-color: #ff4d4d;
+    color: #fff;
+  }
+  
+  .cart-item button:hover {
+    background-color: #cc0000;
+  }
+  
+  .cart-total {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .cart-total-text {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .cart-checkout-button {
+    background-color: #28a745;
+    color: #fff;
+    margin-top: 10px;
+  }
+  
+  .cart-checkout-button:hover {
+    background-color: #218838;
+  }
