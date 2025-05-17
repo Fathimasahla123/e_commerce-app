@@ -11,9 +11,9 @@ app.use(express.json());
 app.use(
   cors({
     origin:[ "http://localhost:5173",
-            e-commerce-2s919e2ix-fathima-sahlas-projects-9d2c9f48.vercel.app],
+            "e-commerce-2s919e2ix-fathima-sahlas-projects-9d2c9f48.vercel.app"],
     credentials: true,
-
+methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ["Content-Type", "Authorization", "x-access-token"],
   })
 );
