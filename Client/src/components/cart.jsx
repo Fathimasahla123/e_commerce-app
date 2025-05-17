@@ -3,10 +3,10 @@ import axios from "axios";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
-
+ const apiUrl = import.meta.env.REACT_APP_API_URL || "http://localhost:5001";
   useEffect(() => {
     axios
-      .get(`${"http://localhost:5000"}/api/cart`)
+      .get(`${apiUrl}/api/cart`)
       .then((response) => setCartItems(response.data))
       .catch((error) => console.log(error));
   }, []);
