@@ -3,7 +3,7 @@ import axios from "axios";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
- const apiUrl = import.meta.env.REACT_APP_API_URL || "http://localhost:5001";
+ const apiUrl = import.meta.env.REACT_APP_API_URL || "http://localhost:5000";
   useEffect(() => {
     axios
       .get(`${apiUrl}/api/products`)
