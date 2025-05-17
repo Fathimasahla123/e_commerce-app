@@ -7,12 +7,12 @@ const ProductDetails = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
+ const apiUrl = import.meta.env.REACT_APP_API_URL || "http://localhost:5001";
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `${"http://localhost:5000"}/api/products/${id}`
+          `${apiUrl}/api/products/${id}`
         );
         setProduct(response.data);
         setError("");
