@@ -3,10 +3,10 @@ import axios from "axios";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-
+ const apiUrl = import.meta.env.REACT_APP_API_URL || "http://localhost:5001";
   useEffect(() => {
     axios
-      .get(`${"http://localhost:5000"}/api/products`)
+      .get(`${apiUrl}/api/products`)
       .then((response) => setProducts(response.data))
       .catch((error) => console.log(error));
   }, []);
