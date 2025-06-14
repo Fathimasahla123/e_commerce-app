@@ -90,55 +90,41 @@ const styles = {
     color: "#666",
     textAlign: "center",
   },
+
   cartItem: {
     borderBottom: "1px solid #ddd",
     padding: "15px 0",
-    display: "flex",
-    justifyContent: "space-between",
+    display: "grid",
+    gridTemplateColumns: "2fr 1fr 1fr 1fr",
     alignItems: "center",
+    gap: "10px",
   },
-  itemName: {
-    fontSize: "1.5rem",
-    marginBottom: "10px",
-  },
-  itemPrice: {
-    fontSize: "1.1rem",
-    color: "#666",
-  },
-  removeButton: {
-    backgroundColor: "#ff4d4d",
-    color: "#fff",
-    border: "none",
-    padding: "5px 10px",
+  
+  input: {
+    width: "60px",
+    padding: "5px",
+    marginLeft: "10px",
     borderRadius: "5px",
-    cursor: "pointer",
-    fontSize: "1rem",
-    transition: "background-color 0.3s ease",
+    border: "1px solid #ccc",
   },
-  removeButtonHover: {
-    backgroundColor: "#cc0000",
-  },
+  
   total: {
-    marginTop: "20px",
+    marginTop: "30px",
     textAlign: "right",
-  },
-  totalText: {
     fontSize: "1.5rem",
-    color: "#333",
   },
+  
   checkoutButton: {
+    marginTop: "10px",
     backgroundColor: "#28a745",
     color: "#fff",
     border: "none",
-    padding: "10px 20px",
-    borderRadius: "5px",
-    cursor: "pointer",
+    padding: "12px 25px",
+    borderRadius: "8px",
     fontSize: "1rem",
-    transition: "background-color 0.3s ease",
+    cursor: "pointer",
   },
-  checkoutButtonHover: {
-    backgroundColor: "#218838",
-  },
+  
 };
 
 export default Cart;

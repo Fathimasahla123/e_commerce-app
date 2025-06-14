@@ -4,7 +4,6 @@ import Home from "./components/home";
 import Products from "./components/products";
 import Cart from "./components/cart";
 import ProductDetails from "./components/productDetails";
-import "./App.css";
 function App() {
   return (
     <Router>
