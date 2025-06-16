@@ -6,7 +6,7 @@ const Cart = () => {
  const apiUrl = import.meta.env.REACT_APP_API_URL || "http://localhost:5000";
   useEffect(() => {
     axios
-      .get(`${apiUrl}/api/cart`)
+      .get(`${apiUrl}/api/cart/getCart`)
       .then((response) => setCartItems(response.data))
       .catch((error) => console.log(error));
   }, []);

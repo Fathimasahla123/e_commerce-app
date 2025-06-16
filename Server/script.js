@@ -20,6 +20,7 @@ methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 
 // Routes
 app.use("/api/products", require("./src/routes/productRoutes"));
+app.use("/api/cart", require("./src/routes/cartRoutes"));
 
 connectDB();
 
