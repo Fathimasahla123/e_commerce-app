@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
- const apiUrl = import.meta.env.REACT_APP_API_URL || "http://localhost:5000";
+  const navigate = useNavigate();
+
+  const apiUrl = import.meta.env.REACT_APP_API_URL || "http://localhost:5000";
   useEffect(() => {
     axios
       .get(`${apiUrl}/api/cart/getCart`)
@@ -11,22 +14,26 @@ const Cart = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  // Calculate total price
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
 
-  const handleQuantityChange = (id, quantity) => {
+  const handleQuantityChange = (_id, quantity) => {
     const updatedCart = cartItems.map((item) =>
-      item.id === id ? { ...item, quantity: parseInt(quantity) } : item
+      item._id === _id ? { ...item, quantity: parseInt(quantity) } : item
     );
     setCartItems(updatedCart);
   };
 
   const handleRemoveItem = (id) => {
-    const updatedCart = cartItems.filter((item) => item.id !== id);
-    setCartItems(updatedCart);
+    axios
+      .delete(`${apiUrl}/api/cart/deleteCart/${id}`)
+      .then(() => {
+        const updatedCart = cartItems.filter((item) => item._id !== id);
+        setCartItems(updatedCart);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -37,7 +44,7 @@ const Cart = () => {
       ) : (
         <div>
           {cartItems.map((item) => (
-            <div key={item.id} style={styles.cartItem}>
+            <div key={item._id} style={styles.cartItem}>
               <h3>{item.name}</h3>
               <p>Price: ${item.price}</p>
               <label>
@@ -47,13 +54,13 @@ const Cart = () => {
                   value={item.quantity}
                   min="1"
                   onChange={(e) =>
-                    handleQuantityChange(item.id, e.target.value)
+                    handleQuantityChange(item._id, e.target.value)
                   }
                   style={styles.input}
                 />
               </label>
               <button
-                onClick={() => handleRemoveItem(item.id)}
+                onClick={() => handleRemoveItem(item._id)}
                 style={styles.removeButton}
               >
                 Remove
@@ -62,7 +69,12 @@ const Cart = () => {
           ))}
           <div style={styles.total}>
             <h3>Total: ${totalPrice.toFixed(2)}</h3>
-            <button style={styles.checkoutButton}>Proceed to Checkout</button>
+            <button
+              style={styles.productButton}
+              onClick={() => navigate("/products")}
+            >
+              Back to Products
+            </button>
           </div>
         </div>
       )}
@@ -72,8 +84,9 @@ const Cart = () => {
 
 const styles = {
   container: {
+    width: "100vw",
+    height: "100vh",
     padding: "20px",
-    maxWidth: "800px",
     margin: "0 auto",
     backgroundColor: "#fff",
     borderRadius: "10px",
@@ -99,7 +112,7 @@ const styles = {
     alignItems: "center",
     gap: "10px",
   },
-  
+
   input: {
     width: "60px",
     padding: "5px",
@@ -107,14 +120,14 @@ const styles = {
     borderRadius: "5px",
     border: "1px solid #ccc",
   },
-  
+
   total: {
     marginTop: "30px",
     textAlign: "right",
     fontSize: "1.5rem",
   },
-  
-  checkoutButton: {
+
+  productButton: {
     marginTop: "10px",
     backgroundColor: "#28a745",
     color: "#fff",
@@ -124,7 +137,6 @@ const styles = {
     fontSize: "1rem",
     cursor: "pointer",
   },
-  
 };
 
 export default Cart;
