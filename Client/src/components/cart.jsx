@@ -40,8 +40,9 @@ const Cart = () => {
     <div style={styles.container}>
       <h1 style={styles.heading}>Your Cart</h1>
       {cartItems.length === 0 ? (
-        <p style={styles.text}>Your cart is empty.</p>
-      ) : (
+        <p style={styles.text}> 🛒 Your cart is empty</p>
+      )
+       : (
         <div>
           {cartItems.map((item) => (
             <div key={item._id} style={styles.cartItem}>
@@ -137,6 +138,24 @@ const styles = {
     fontSize: "1rem",
     cursor: "pointer",
   },
+  removeButton:{
+    backgroundColor: "red",
+  },
+  text: {
+    fontSize: "24px",
+    fontWeight: "bold",
+    color: "#555",
+    backgroundColor: "#f8f8f8",  // Removed extra space before #
+    padding: "20px 30px",
+    textAlign: "center",         // Value should be in quotes
+    border: "2px dashed #ccc",
+    borderRadius: "12px",
+    margin: "50px auto",
+    width: "400px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+  }
+  
 };
 
 export default Cart;
